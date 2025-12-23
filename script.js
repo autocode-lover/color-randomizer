@@ -19,7 +19,9 @@ const hexValue = [
 ];
 
 btn.addEventListener("click", function () {
-  console.log("btn is clicked");
+  const hexColor = hexValueGenerator();
+  document.body.style.backgroundColor = hexColor;
+  btn.style.backgroundColor = hexColor;
 });
 
 // const randomHexValue = Math.floor(Math.random() * hexValue.length);
@@ -27,13 +29,10 @@ btn.addEventListener("click", function () {
 function randomHexValue() {
   return Math.floor(Math.random() * hexValue.length);
 }
-console.log(randomHexValue);
 function hexValueGenerator() {
   let hexColor = "#";
   for (let i = 0; i < 6; i++) {
     hexColor += hexValue[randomHexValue()];
-    console.log(hexColor);
   }
+  return hexColor;
 }
-
-hexValueGenerator();
